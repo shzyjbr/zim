@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package protocol;
+
+option java_package = "com.zzk.common.protocol";
+option java_outer_classname = "ZIMRequestProto";
+
+message ZIMReqProtocol {
+  int32 type = 1;
+  string username = 2;
+  string reqMsg = 3;
+}
+

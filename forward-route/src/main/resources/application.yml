@@ -1,0 +1,43 @@
+app:
+  route:
+    way: com.zzk.common.algorithm.consistenthash.ConsistentHashHandle
+    way.consitenthash: com.zzk.common.algorithm.consistenthash.TreeMapConsistentHash
+  zk:
+    addr: 127.0.0.1:2181
+    connect:
+      timeout: 15000
+    root: /zim-route
+logging:
+  level:
+    root: info
+    com.zzk.forwardroute: debug
+  file:
+    name: log/log.log
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zzk.forwardroute.pojo
+server:
+  port: 8090
+spring:
+  application:
+    name: zim-forward-route
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialSize: 5.0
+    maxActive: 20
+    maxWait: 60000
+    minIdle: 5
+    password: 0754zzk
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://175.178.162.146:3306/zim?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+  redis:
+    host: 127.0.0.1
+    lettuce:
+      pool:
+        max-active: 100
+        max-idle: 100
+        max-wait: 1000
+        min-idle: 10
+    password: 0754zzk
+    port: 9999

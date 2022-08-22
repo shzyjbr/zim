@@ -1,0 +1,32 @@
+app:
+  zk:
+    addr: 127.0.0.1:2181
+    connect:
+      timeout: 2000
+    root: /zim-route
+    switch: true
+logging:
+  level:
+    root: info
+server:
+  port: 8081
+spring:
+  application:
+    name: zim-server
+  redis:
+    host: 127.0.0.1
+    lettuce:
+      pool:
+        max-active: 100
+        max-idle: 100
+        max-wait: 1000
+        min-idle: 10
+    password: 0754zzk
+    port: 9999
+zim:
+  heartbeat:
+    time: 30
+  route:
+    url: http://localhost:8090/
+  server:
+    port: 11211
